@@ -1,0 +1,87 @@
+/* Page background */
+.doctor-page {
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+/* Header */
+.doctor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #ffffff;
+  padding: 15px 20px;
+
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.doctor-header h1 {
+  font-size: 22px;
+  color: #1e40af;
+}
+
+/* Logout button */
+.logout-btn {
+  background-color: #dc2626;
+  color: white;
+
+  border: none;
+  padding: 8px 14px;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Card */
+.doctor-card {
+  background: #ffffff;
+  padding: 20px;
+
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.doctor-card h3 {
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+/* List */
+.doctor-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doctor-card li {
+  padding: 12px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #374151;
+  font-size: 15px;
+}
+
+/* Remove last border */
+.doctor-card li:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect */
+.doctor-card li:hover {
+  background-color: #f9fafb;
+}

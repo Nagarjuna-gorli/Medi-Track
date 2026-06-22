@@ -1,0 +1,261 @@
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.admin-appointments-container {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.admin-appointments-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   CREATE APPOINTMENT CARD
+=========================== */
+
+.appointment-create-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.appointment-create-card h2 {
+  margin-bottom: 20px;
+}
+
+.appointment-create-card form {
+  display: grid;
+  gap: 15px;
+}
+
+.appointment-create-card select,
+.appointment-create-card input,
+.appointment-create-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.appointment-create-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.appointment-create-card select:focus,
+.appointment-create-card input:focus,
+.appointment-create-card textarea:focus {
+  border-color: #2563eb;
+}
+
+/* ===========================
+   CREATE BUTTON
+=========================== */
+
+.create-btn {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.create-btn:hover {
+  background: #15803d;
+}
+
+/* ===========================
+   FILTERS
+=========================== */
+
+.appointment-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.appointment-filters input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.appointment-filters input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+}
+
+.appointment-filters button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.appointment-filters button:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================
+   SUMMARY CARDS
+=========================== */
+
+.appointment-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.summary-card h3 {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.summary-card p {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.appointments-table th {
+  background: #1e3a8a;
+  color: white;
+  padding: 14px;
+  text-align: left;
+}
+
+.appointments-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.appointments-table tr:hover {
+  background: #f8fafc;
+}
+
+/* ===========================
+   STATUS BADGES
+=========================== */
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #f59e0b;
+}
+
+.status.confirmed {
+  background: #2563eb;
+}
+
+.status.completed {
+  background: #16a34a;
+}
+
+.status.doctor_cancelled,
+.status.patient_cancelled {
+  background: #dc2626;
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+.confirm-btn,
+.complete-btn,
+.cancel-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.confirm-btn {
+  background: #2563eb;
+}
+
+.confirm-btn:hover {
+  background: #1d4ed8;
+}
+
+.complete-btn {
+  background: #16a34a;
+}
+
+.complete-btn:hover {
+  background: #15803d;
+}
+
+.cancel-btn {
+  background: #dc2626;
+}
+
+.cancel-btn:hover {
+  background: #b91c1c;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .appointment-filters {
+    flex-direction: column;
+  }
+
+  .appointments-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .appointment-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+}

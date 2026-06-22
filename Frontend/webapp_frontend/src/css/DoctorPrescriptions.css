@@ -1,0 +1,131 @@
+/* Page background */
+.prescription-container {
+  width: 100%;
+  max-width: 1200px;   /* increase width */
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Make form wider */
+.prescription-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make Select + inputs stretch full width */
+.prescription-form input,
+.prescription-form textarea,
+.prescription-form .css-13cymwt-control {
+  width: 100% !important;
+}
+
+/* Headings */
+.prescription-container h2 {
+  color: #1d4ed8;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.prescription-form {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs */
+.prescription-form input,
+.prescription-form textarea {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+  background: white;
+}
+
+.prescription-form input:focus,
+.prescription-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+
+/* React Select styling */
+.css-13cymwt-control,
+.css-16xfy0z-control {
+  border-color: #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
+.css-13cymwt-control:hover {
+  border-color: #2563eb !important;
+}
+
+/* Buttons */
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* Cancel button (secondary) */
+button[type="button"] {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+button[type="button"]:hover {
+  background: #cbd5e1;
+}
+
+/* Search box */
+.prescription-search {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Prescription cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #2563eb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* Card text */
+.card h3 {
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+/* Action buttons inside cards */
+.card button {
+  padding: 6px 10px;
+  font-size: 14px;
+}

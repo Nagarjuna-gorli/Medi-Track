@@ -1,0 +1,23 @@
+.prescription-container {
+  padding: 20px;
+  background: #f4f8ff;
+  min-height: 100vh;
+}
+
+.prescription-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  border-left: 5px solid #3b82f6;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #2563eb;
+}

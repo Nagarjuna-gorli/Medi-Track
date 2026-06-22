@@ -1,0 +1,109 @@
+body {
+  background: linear-gradient(135deg, #eaf3ff, #f7faff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main Card */
+.patient-profile-container {
+  width: 90%;
+  max-width: 650px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 77, 183, 0.15);
+  border: 1px solid #e6efff;
+}
+
+/* Title */
+.patient-profile-container h2 {
+  text-align: center;
+  color: #1e4db7;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Label */
+.patient-profile-container label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2a4a8a;
+}
+
+/* Inputs */
+.patient-profile-container input,
+.patient-profile-container select,
+.patient-profile-container textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfe0ff;
+  border-radius: 10px;
+  background: #f9fbff;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus effect */
+.patient-profile-container input:focus,
+.patient-profile-container select:focus,
+.patient-profile-container textarea:focus {
+  border-color: #1e4db7;
+  box-shadow: 0 0 8px rgba(30, 77, 183, 0.2);
+  outline: none;
+  background: #fff;
+}
+
+/* Disabled fields */
+.patient-profile-container input:disabled,
+.patient-profile-container select:disabled,
+.patient-profile-container textarea:disabled {
+  background: #eef4ff;
+  color: #777;
+}
+
+/* Buttons container spacing */
+.patient-profile-container button {
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Edit button */
+.patient-profile-container button:first-of-type {
+  background: #1e4db7;
+  color: white;
+}
+
+/* Save button */
+.patient-profile-container button:nth-of-type(1):not(:only-child) {
+  background: #1e88e5;
+  color: white;
+  margin-right: 10px;
+}
+
+/* Cancel button */
+.patient-profile-container button:nth-of-type(2) {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* Hover effects */
+.patient-profile-container button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* Small screen */
+@media (max-width: 600px) {
+  .patient-profile-container {
+    margin: 20px;
+    padding: 18px;
+  }
+}

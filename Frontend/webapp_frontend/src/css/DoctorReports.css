@@ -1,0 +1,330 @@
+.doctor-reports-container {
+  max-width: 1600px; /* was 1100px */
+  width: 95%;
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.08);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.doctor-reports-container h2 {
+  color: #1565c0;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* FORM */
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.report-form input,
+.report-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfe2ff;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.report-form input:focus,
+.report-form textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.25);
+}
+
+.report-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* REACT SELECT */
+
+.css-b62m3t-container {
+  font-size: 15px;
+}
+
+.css-13cymwt-control {
+  min-height: 48px !important;
+  border-radius: 10px !important;
+  border: 1px solid #cfe2ff !important;
+}
+
+.css-13cymwt-control:hover {
+  border-color: #2196f3 !important;
+}
+
+.css-t3ipsp-control {
+  min-height: 48px !important;
+  border-radius: 10px !important;
+  border: 1px solid #2196f3 !important;
+  box-shadow: 0 0 6px rgba(33, 150, 243, 0.25) !important;
+}
+
+.css-1nmdiq5-menu {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+/* BUTTONS */
+
+.report-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.report-form button[type="submit"] {
+  background: #1976d2;
+  color: white;
+}
+
+.report-form button[type="submit"]:hover {
+  background: #0d47a1;
+}
+
+.report-form button[type="button"] {
+  background: #eceff1;
+  color: #333;
+}
+
+.report-form button[type="button"]:hover {
+  background: #d5dde2;
+}
+
+/* SEARCH */
+
+.doctor-reports-container input[type="text"] {
+  margin-top: 10px;
+}
+
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 2px solid #e3f2fd;
+}
+
+/* REPORT CARDS */
+
+.report-card {
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #1976d2;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.15);
+}
+
+.report-card h3 {
+  color: #1565c0;
+  margin-bottom: 10px;
+}
+
+.report-card p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.report-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1976d2;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.report-card a:hover {
+  text-decoration: underline;
+}
+
+/* ACTION BUTTONS */
+
+.report-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+
+}
+/* Search Box */
+.report-search {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 15px auto 25px;
+  padding: 12px 16px;
+  border: 2px solid #d6e4ff;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.report-search:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.2);
+}
+
+/* Report Card */
+.report-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.12);
+}
+
+.report-card h3 {
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+.report-card p {
+  margin: 8px 0;
+  color: #374151;
+}
+
+.report-card strong {
+  color: #1e3a8a;
+}
+
+/* View Report Link */
+.report-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.report-card a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.report-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: green;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: green;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Heading */
+.doctor-reports-container h2 {
+  text-align: center;
+  color: #1e40af;
+  margin-bottom: 20px;
+}
+
+.report-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Update Button */
+.edit-btn {
+  background:green;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background:green;
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Click Effect */
+.edit-btn:active,
+.delete-btn:active {
+  transform: scale(0.96);
+}

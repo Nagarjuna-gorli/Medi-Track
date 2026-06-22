@@ -1,0 +1,159 @@
+body {
+  background: #f4f8ff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main Container */
+.doctor-profile-container {
+  max-width: 950px;      /* Increased from 750px */
+  width: 95%;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 76, 153, 0.08);
+  border: 1px solid #dce8ff;
+  }
+
+/* Heading */
+.doctor-profile-container h2 {
+  text-align: center;
+  color: #0f4db8;
+  font-size: 34px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Labels */
+.doctor-profile-container label {
+  display: block;
+   margin-bottom: 8px;
+  margin-top: 18px;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Inputs */
+.doctor-profile-container input,
+.doctor-profile-container select,
+.doctor-profile-container textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #c8d8ff;
+  border-radius: 10px;
+   font-size: 16px;
+  color: #222;
+  background: #fafcff;
+  transition: all 0.3s ease;
+}
+
+/* Focus */
+.doctor-profile-container input:focus,
+.doctor-profile-container select:focus,
+.doctor-profile-container textarea:focus {
+  outline: none;
+  border-color: #0f4db8;
+  box-shadow: 0 0 8px rgba(15, 77, 184, 0.15);
+  background: #ffffff;
+}
+
+/* Disabled */
+.doctor-profile-container input:disabled,
+.doctor-profile-container select:disabled,
+.doctor-profile-container textarea:disabled {
+  background: #eef4ff;
+  color: #444;
+}
+
+/* Textarea */
+.doctor-profile-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button Container */
+.profile-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Edit / Save Button */
+.save-btn,
+.edit-btn {
+  background: #1565c0;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+   font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover,
+.edit-btn:hover {
+  background: #0d47a1;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background: #e53935;
+   color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background: #c62828;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .doctor-profile-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .doctor-profile-container h2 {
+    font-size: 28px;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+  }
+
+   .edit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+.edit-btn {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+.edit-btn:active {
+  transform: scale(0.97);
+}

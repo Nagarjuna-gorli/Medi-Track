@@ -1,0 +1,96 @@
+/* Page layout */
+.login-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Brand title */
+.brand-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* Login box */
+.login-container {
+  width: 360px;
+  background: #ffffff;
+  padding: 30px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* Inputs */
+.login-container input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  font-size: 14px;
+  outline: none;
+}
+
+/* Input focus */
+.login-container input:focus {
+  border-color: #2563eb;
+}
+
+/* Button */
+.login-container button {
+  width: 100%;
+  padding: 10px;
+
+  background-color: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Button hover (simple, not animated) */
+.login-container button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Register text */
+.login-container p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Link */
+.login-container a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

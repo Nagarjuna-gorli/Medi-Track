@@ -1,0 +1,66 @@
+/* Container */
+.doctor-patients-container {
+  padding: 25px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.doctor-patients-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Search box */
+.doctor-search {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.doctor-search:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+/* Table */
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.doctor-table th {
+  background: #4a90e2;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Table Cells */
+.doctor-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Row hover */
+.doctor-table tr:hover {
+  background-color: #f5f9ff;
+}
+
+/* No data / loading text */
+.doctor-empty {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+}

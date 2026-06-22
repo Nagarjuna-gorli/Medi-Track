@@ -1,0 +1,19 @@
+.view-btn {
+  background: #2563eb;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  margin-right: 6px;
+  cursor: pointer;
+}
+.view-btn:hover {
+  background: #1e40af;
+}
+
+.details-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}

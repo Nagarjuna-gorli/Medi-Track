@@ -1,0 +1,238 @@
+/* =========================
+   Main Container
+========================= */
+.admin-reports {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.admin-reports h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   Form Section
+========================= */
+.report-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.report-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.report-form input:focus,
+.report-form select:focus,
+.report-form textarea:focus {
+  border-color: #2563eb;
+}
+
+/* =========================
+   Form Buttons
+========================= */
+.report-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.report-form button[type="submit"] {
+  background: #2563eb;
+  color: white;
+}
+
+.report-form button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+.report-form button[type="button"] {
+  background: #dc2626;
+  color: white;
+}
+
+.report-form button[type="button"]:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Reports Grid
+========================= */
+.report-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   Report Card
+========================= */
+.report-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+}
+
+.report-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.report-card p {
+  margin: 8px 0;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.report-card strong {
+  color: #0f172a;
+}
+
+/* =========================
+   File Link
+========================= */
+.report-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.report-card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Action Buttons
+========================= */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Edit */
+.actions button:first-child {
+  background: #16a34a;
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background: #15803d;
+}
+
+/* Delete */
+.actions button:last-child {
+  background: #dc2626;
+  color: white;
+}
+
+.actions button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Divider
+========================= */
+hr {
+  margin: 35px 0;
+  border: none;
+  border-top: 1px solid #cbd5e1;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .admin-reports {
+    padding: 15px;
+  }
+
+  .report-list {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.search-section input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+.search-section input[type="date"] {
+  padding: 10px;
+}
+
+.search-section button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.reports-summary {
+  display: flex;
+  gap: 20px;
+}
+
+.summary-card {
+  flex: 1;
+}

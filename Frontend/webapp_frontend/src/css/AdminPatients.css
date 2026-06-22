@@ -1,0 +1,187 @@
+/* =========================
+   Main Container
+========================= */
+.admin-patients-container {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* =========================
+   Heading
+========================= */
+.admin-patients-container h2 {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   Search Box
+========================= */
+.search-section {
+  margin-bottom: 25px;
+}
+
+.search-section input {
+  width: 100%;
+  padding: 14px 18px;
+
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+
+  background: white;
+  color: #1f2937;
+
+  font-size: 15px;
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+.search-section input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   Table Wrapper
+========================= */
+.table-wrapper {
+  background: white;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Table
+========================= */
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table Header */
+.patient-table th {
+  background: #2563eb;
+  color: white;
+
+  padding: 16px;
+  text-align: left;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Table Data */
+.patient-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #374151;
+  font-size: 14px;
+}
+
+/* Alternate Row Colors */
+.patient-table tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+/* Hover Effect */
+.patient-table tbody tr:hover {
+  background: #eef5ff;
+}
+
+/* =========================
+   Action Buttons
+========================= */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* View Button */
+.view-btn {
+  border: none;
+  padding: 8px 14px;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Delete Button */
+.delete-btn {
+  border: none;
+  padding: 8px 14px;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  background: #dc2626;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   Loading Text
+========================= */
+.loading-text {
+  text-align: center;
+  margin-top: 40px;
+
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .admin-patients-container {
+    padding: 15px;
+  }
+
+  .patient-table th,
+  .patient-table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .view-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

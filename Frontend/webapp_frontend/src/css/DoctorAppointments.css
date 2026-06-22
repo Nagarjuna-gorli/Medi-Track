@@ -1,0 +1,132 @@
+.doctor-appointments {
+  padding: 20px;
+  background: #f4f8ff;
+  min-height: 100vh;
+}
+
+.doctor-appointments h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.appointment-card {
+  background: white;
+  border-left: 5px solid #2563eb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.appointment-card p {
+  margin: 8px 0;
+  color: #333;
+}
+
+/* Status Badge */
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.confirmed {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.doctor_cancelled,
+.status.patient_cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Common Button Style */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Confirm */
+.btn.confirm {
+  background: #2563eb;
+}
+
+.btn.confirm:hover {
+  background: #1d4ed8;
+}
+
+/* Complete */
+.btn.complete {
+  background: #16a34a;
+}
+
+.btn.complete:hover {
+  background: #15803d;
+}
+
+/* Cancel */
+.btn.cancel {
+  background: #ef4444;
+}
+
+.btn.cancel:hover {
+  background: #dc2626;
+}
+
+/* Remove History */
+.btn.remove {
+  background: #111;
+  color: #fff;
+}
+
+.btn.remove:hover {
+  background: #333;
+  transform: scale(1.03);
+}
+
+.btn.remove:active {
+  transform: scale(0.97);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
