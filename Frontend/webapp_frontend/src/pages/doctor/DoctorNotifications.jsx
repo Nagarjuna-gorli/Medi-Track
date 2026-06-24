@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
 export default function DoctorNotifications() {
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -65,6 +68,12 @@ return () => ws.close();
 
   return (
     <div style={{ padding: "20px" }}>
+      <div className="back-container">
+        <FaArrowLeft
+          className="back-arrow"
+          onClick={() => navigate("/doctor")}
+        />
+      </div>
       <h2>Doctor Notifications</h2>
 
       {notifications.length > 0 ? (

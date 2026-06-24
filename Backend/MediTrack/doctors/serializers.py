@@ -18,6 +18,7 @@ class DoctorSerializer(serializers.ModelSerializer):
             "username",
             "email",
             "specialization",
+            "experience",
             "phone",
             "hospital_name",
             "hospital_address",

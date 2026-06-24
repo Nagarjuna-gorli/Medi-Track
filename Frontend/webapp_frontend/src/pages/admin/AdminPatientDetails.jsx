@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminPatientDetails.css"
 
 export default function AdminPatientDetails() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [patient, setPatient] = useState(null);
 
@@ -24,6 +27,12 @@ export default function AdminPatientDetails() {
 
   return (
     <div className="details-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin/patients")}
+          />
+        </div>
       <h2>Patient Details</h2>
 
       <p><b>ID:</b> {patient.id}</p>

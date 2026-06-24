@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminProfile.css";
 
 export default function AdminProfile() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
     username: "",
     first_name: "",
@@ -73,6 +76,12 @@ export default function AdminProfile() {
 
   return (
     <div className="admin-profile-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
       <div className="profile-card">
         <h2>Admin Profile</h2>
 

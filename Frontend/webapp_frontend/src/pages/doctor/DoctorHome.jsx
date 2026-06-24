@@ -1,72 +1,188 @@
-import { useEffect } from "react";
+import { useEffect, useState  } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../css/DoctorHome.css";
+import api from "../../services/api";
 
 function DoctorHome() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("access");
-    const role = localStorage.getItem("role");
+  const [stats, setStats] = useState({
+    patients: 0,
+    today: 0,
+    pending: 0,
+    completed: 0,
+    prescriptions: 0,
+    reports: 0,
+    notifications: 0,
+  });
 
-    if (!token || role !== "doctor") {
-      navigate("/");
-    }
-  }, [navigate]);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+  const token = localStorage.getItem("access");
+  const role = localStorage.getItem("role");
+
+  if (!token || role !== "doctor") {
+    navigate("/");
+    return;
+  }
+
+  setUserName(localStorage.getItem("username") || "Doctor");
+
+  api
+    .get("/doctors/dashboard-stats/")
+    .then((res) => {
+      setStats(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+}, [navigate]);
 
   const logout = () => {
-    localStorage.clear();
-    navigate("/");
-  };
+  const confirmLogout = window.confirm(
+    "Are you sure you want to log out?"
+  );
+
+  if (confirmLogout) {
+    localStorage.clear(); // or remove specific items
+    navigate("/");   // change route if needed
+  }
+};
+
+
+  const services = [
+    {
+      icon: "👤",
+      title: "My Profile",
+      desc: "View and update your profile information.",
+      path: "/doctor/profile",
+      color: "purple",
+    },
+    {
+      icon: "👥",
+      title: "Patients",
+      desc: "Manage and view your assigned patients.",
+      path: "/doctor/patients",
+      color: "green",
+    },
+    {
+      icon: "📅",
+      title: "Appointments",
+      desc: "Check and manage scheduled appointments.",
+      path: "/doctor/appointments",
+      color: "blue",
+    },
+    {
+      icon: "💊",
+      title: "Prescriptions",
+      desc: "Create and manage patient prescriptions.",
+      path: "/doctor/prescriptions",
+      color: "orange",
+    },
+    {
+      icon: "📋",
+      title: "Reports",
+      desc: "Access and review medical reports.",
+      path: "/doctor/reports",
+      color: "pink",
+    },
+    {
+      icon: "❤️",
+      title: "Health Status",
+      desc: "Monitor and track patient health records.",
+      path: "/doctor/health",
+      color: "red",
+    },
+    {
+      icon: "🥗",
+      title: "Diet Plans",
+      desc: "Create and manage personalized diet plans.",
+      path: "/doctor/diet",
+      color: "green",
+    },
+    {
+      icon: "🔔",
+      title: "Notifications",
+      desc: "View system and patient notifications.",
+      path: "/doctor/notifications",
+      color: "yellow",
+    },
+  ];
 
   return (
     <div className="doctor-page">
-
       {/* Header */}
       <div className="doctor-header">
         <h1>Doctor Dashboard</h1>
+
         <button className="logout-btn" onClick={logout}>
           Logout
         </button>
       </div>
 
-      {/* Content */}
-      <div className="doctor-card">
-        <h3>Doctor Services</h3>
+      <div className="dashboard-container">
 
-        <ul>
-          <li onClick={() => navigate("/doctor/profile")}>
-            My Profile
-          </li>
+        {/* Hero Banner */}
+        <div className="hero-banner">
+          <h2>Welcome Dr. {userName} 👨‍⚕️</h2>
 
-          <li onClick={() => navigate("/doctor/patients")}>
-            My Patients
-          </li>
+          <p>
+            Manage all your doctor tasks in one place
+          </p>
+        </div>
 
-          <li onClick={() => navigate("/doctor/appointments")}>
-            Appointments
-          </li>
+        {/* Statistics */}
+      <div className="doc-stats-grid">
+        <div className="doc-stat-card">
+        <h3>Patients</h3>
+        <span>{stats.patients}</span>
+      </div>
 
-          <li onClick={() => navigate("/doctor/prescriptions")}>
-            Prescriptions
-          </li>
+      <div className="doc-stat-card">
+        <h3>Today's Appointments</h3>
+        <span>{stats.today}</span>
+      </div>
 
-          <li onClick={() => navigate("/doctor/reports")}>
-            Medical Reports
-          </li>
+      <div className="doc-stat-card">
+        <h3>Prescriptions</h3>
+        <span>{stats.prescriptions}</span>
+      </div>
 
-          <li onClick={() => navigate("/doctor/health")}>
-            Health Status
-          </li>
+      <div className="doc-stat-card">
+        <h3>Reports</h3>
+        <span>{stats.reports}</span>
+      </div>
+      </div>
 
-          <li onClick={() => navigate("/doctor/diet")}>
-            Diet Plans
-          </li>
+        {/* Quick Actions */}
+        <h2 className="quick-title">Quick Actions</h2>
 
-          <li onClick={() => navigate("/doctor/notifications")}>
-            Notifications
-          </li>
-        </ul>
+        <div className="service-grid">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className={`action-card ${service.color}`}
+              onClick={() => navigate(service.path)}
+            >
+              <div className="action-icon">
+                {service.icon}
+              </div>
+
+              <div className="action-content">
+                <h3>{service.title}</h3>
+
+                <p>{service.desc}</p>
+              </div>
+
+              <div className="action-arrow">
+                →
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import api from "../../services/api";
 import Select from "react-select";
 import "../../css/DoctorDietPlans.css";
 
 export default function DoctorDietPlans() {
+  const navigate = useNavigate();
   const [plans, setPlans] = useState([]);
   const [search, setSearch] = useState("");
   const [patients, setPatients] = useState([]);
@@ -157,8 +160,18 @@ export default function DoctorDietPlans() {
   );
 
   return (
-    <div className="diet-container" ref={formRef}>
+    
+    <div className="do-diet-container" ref={formRef}>
+  <div className="do-doctor-appointments">
+    <div className="back-container">
+      <FaArrowLeft
+        className="back-arrow"
+        onClick={() => navigate("/doctor")}
+      />
+    </div>
+
       <h2>Doctor Diet Plans</h2>
+
 
       {/* PATIENT DROPDOWN */}
       <Select
@@ -236,7 +249,7 @@ export default function DoctorDietPlans() {
         placeholder="Search diet plans..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="search-box"
+        className="do-search-box"
       />
 
       <h2>Diet Plans</h2>
@@ -245,7 +258,7 @@ export default function DoctorDietPlans() {
         <p>No Diet Plans found.</p>
       ) : (
         filteredPlans.map((p) => (
-          <div key={p.id} className="diet-card">
+          <div key={p.id} className="do-diet-card">
             <h3>{p.title}</h3>
 
             <p>
@@ -279,6 +292,7 @@ export default function DoctorDietPlans() {
           </div>
         ))
       )}
+    </div>
     </div>
   );
 }

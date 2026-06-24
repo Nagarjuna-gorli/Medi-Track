@@ -138,3 +138,71 @@ class DoctorProfileView(APIView):
             serializer.errors,
             status=400
         )
+    
+
+# doctors/views.py
+
+from appointments.models import Appointment
+from prescriptions.models import Prescription
+from reports.models import Report
+from notifications.models import Notification
+
+from django.utils import timezone
+
+
+class DoctorDashboardStatsView(APIView):
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+
+        doctor = request.user.doctor
+
+        total_patients = Appointment.objects.filter(
+            doctor=doctor,
+            status="completed"
+        ).values("patient").distinct().count()
+
+        today_appointments = Appointment.objects.filter(
+                doctor=doctor,
+                appointment_date__date=timezone.localdate()
+            ).exclude(
+                status__in=[
+                    "completed",
+                    "doctor_cancelled",
+                    "patient_cancelled"
+                ]
+            ).count()
+
+        pending = Appointment.objects.filter(
+            doctor=doctor,
+            status="pending"
+        ).count()
+
+        completed = Appointment.objects.filter(
+            doctor=doctor,
+            status="completed"
+        ).count()
+
+        prescriptions = Prescription.objects.filter(
+            doctor=doctor
+        ).count()
+
+        reports = Report.objects.filter(
+            doctor=doctor
+        ).count()
+
+        notifications = Notification.objects.filter(
+            user=request.user,
+            is_read=False
+        ).count()
+
+        return Response({
+            "patients": total_patients,
+            "today": today_appointments,
+            "pending": pending,
+            "completed": completed,
+            "prescriptions": prescriptions,
+            "reports": reports,
+            "notifications": notifications
+        })

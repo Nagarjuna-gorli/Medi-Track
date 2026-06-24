@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminReports.css";
 
 export default function AdminReports() {
+  const navigate = useNavigate();
   const [reports, setReports] = useState([]);
   const [patients, setPatients] = useState([]);
   const [doctors, setDoctors] = useState([]);
@@ -247,6 +250,12 @@ export default function AdminReports() {
 
   return (
     <div className="admin-reports">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
 
       {/* ========================= */}
       {/* FORM */}

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/MyPatients.css";
 
 export default function DoctorPatients() {
+  const navigate = useNavigate();
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -30,6 +33,13 @@ export default function DoctorPatients() {
 
   return (
     <div className="doctor-patients-container">
+      <div className="doctor-appointments">
+            <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/doctor")}
+          />
+        </div>
       <h2>My Patients</h2>
 
       <input
@@ -71,6 +81,7 @@ export default function DoctorPatients() {
           </tbody>
         </table>
       )}
+    </div>
     </div>
   );
 }

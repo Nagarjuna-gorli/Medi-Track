@@ -41,6 +41,11 @@ class Doctor(models.Model):
         choices=BLOOD_GROUP_CHOICES,
         blank=True
     )
+    
+    experience = models.PositiveIntegerField(
+        default=0,
+        help_text="Years of experience")
+
 
     def __str__(self):
         return self.user.get_full_name() or self.user.username

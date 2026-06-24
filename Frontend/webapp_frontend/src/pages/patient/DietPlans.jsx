@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/DietPlans.css";
 
 export default function DietPlans() {
+  const navigate = useNavigate();
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,15 +45,23 @@ export default function DietPlans() {
   }
 
   return (
-    <div className="diet-container">
+    <div className="patient-diet-container">
+
+      <div className="back-container">
+      <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+      />
+     </div>
+
       <h2>My Diet Plans</h2>
 
       {plans.length === 0 ? (
         <p>No diet plans assigned yet.</p>
       ) : (
-        <div className="diet-grid">
+        <div className="patient-diet-grid">
           {plans.map((plan) => (
-            <div key={plan.id} className="diet-card">
+            <div key={plan.id} className="patient-diet-card">
 
               <h3>{plan.title}</h3>
 
@@ -65,7 +76,7 @@ export default function DietPlans() {
                 <b>Description:</b> {plan.description}
               </p>
 
-              <div className="meals">
+              <div className="patient-meals">
                 <p><b>Morning:</b> {plan.morning || "Not set"}</p>
                 <p><b>Afternoon:</b> {plan.afternoon || "Not set"}</p>
                 <p><b>Dinner:</b> {plan.dinner || "Not set"}</p>

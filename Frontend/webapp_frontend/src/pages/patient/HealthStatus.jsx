@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/HealthStatus.css";
 
 export default function HealthStatus() {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   const fetchHealthStatus = async () => {
@@ -22,6 +25,14 @@ export default function HealthStatus() {
 
   return (
     <div className="health-container">
+
+      <div className="back-container">
+      <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+      />
+     </div>
+
       <h2>My Health Status</h2>
 
       {data.map((item) => (

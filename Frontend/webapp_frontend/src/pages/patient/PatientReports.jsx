@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/PatientReports.css";
 
 export default function PatientReports() {
+  const navigate = useNavigate();
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
@@ -13,6 +16,14 @@ export default function PatientReports() {
 
   return (
     <div className="report-container">
+
+      <div className="back-container">
+      <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+      />
+     </div>
+
       <h2>My Medical Reports</h2>
 
       {reports.length === 0 ? (

@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.appointments-title {
+  color: blue; 
+}
+
 .save-btn {
   background: green;
   color: white;

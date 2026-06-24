@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
 export default function AdminNotifications() {
+  const navigate = useNavigate();
 const [notifications, setNotifications] = useState([]);
 const fetchNotifications = async () => {
   try {
@@ -46,6 +49,12 @@ return () => ws.close();
 
   return (
     <div>
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
       <h2>Admin Notifications</h2>
 
       {notifications.map((n, i) => (

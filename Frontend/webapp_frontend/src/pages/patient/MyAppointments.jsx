@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/MyAppointments.css";
 
 export default function MyAppointments() {
+  const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -140,8 +143,15 @@ export default function MyAppointments() {
     return <h3>Loading appointments...</h3>;
 
   return (
+    
     <div className="my-appointments">
-      <h2>My Appointments</h2>
+      <div className="back-container">
+    <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+    />
+  </div>
+      <h2 className="appointments-title"> My Appointments</h2>
 
       {appointments.length === 0 ? (
         <p>No appointments found</p>

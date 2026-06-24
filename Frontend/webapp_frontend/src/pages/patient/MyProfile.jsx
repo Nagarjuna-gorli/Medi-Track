@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/MyProfile.css";
 
 
 function PatientProfile() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
     username: "",
     email: "",
@@ -69,6 +72,13 @@ function PatientProfile() {
 
   return (
     <div className="patient-profile-container">
+     <div className="back-container">
+    <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+    />
+  </div>
+ 
       <h2>Patient Profile</h2>
 
       {/* Username (READ ONLY) */}

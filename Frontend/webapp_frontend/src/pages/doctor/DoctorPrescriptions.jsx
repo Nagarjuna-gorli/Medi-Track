@@ -1,9 +1,12 @@
 import { useEffect, useState,useRef } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import api from "../../services/api";
 import "../../css/DoctorPrescriptions.css";
 
 export default function DoctorPrescriptions() {
+  const navigate = useNavigate();
   const [prescriptions, setPrescriptions] = useState([]);
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -158,6 +161,13 @@ export default function DoctorPrescriptions() {
   }
 
   return (
+    <div className="doctor-appointments">
+          <div className="back-container">
+        <FaArrowLeft
+          className="back-arrow"
+          onClick={() => navigate("/doctor")}
+        />
+      </div>
     <div className="prescription-container" ref={formRef}>
       <h2>
         {editingId
@@ -309,6 +319,7 @@ export default function DoctorPrescriptions() {
           </div>
         ))
       )}
+    </div>
     </div>
   );
 }

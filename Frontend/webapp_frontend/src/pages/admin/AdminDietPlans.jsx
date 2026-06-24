@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminDietPlans.css";
 
 export default function AdminDietPlans() {
+  const navigate = useNavigate();
   const [plans, setPlans] = useState([]);
   const [filteredPlans, setFilteredPlans] = useState([]);
 
@@ -226,6 +229,12 @@ const fetchDoctorPatients = async (doctorId) => {
 
   return (
     <div className="admin-health-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
 
       <h2>Diet Plan Management</h2>
 

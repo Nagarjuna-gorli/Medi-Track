@@ -1,6 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from doctors.models import Doctor
+from patients.models import Patient
+from appointments.models import Appointment
+from reports.models import Report
 
 
 class AdminProfileView(APIView):
@@ -58,4 +62,17 @@ class AdminProfileView(APIView):
 
         return Response({
             "message": "Profile updated"
+        })
+    
+
+
+class AdminDashboardStatsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({
+            "doctors": Doctor.objects.count(),
+            "patients": Patient.objects.count(),
+            "appointments": Appointment.objects.count(),
+            "reports": Report.objects.count(),
         })

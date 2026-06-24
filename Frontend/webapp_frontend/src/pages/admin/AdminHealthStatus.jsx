@@ -1,9 +1,12 @@
 
 import api from "../../services/api";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "../../css/AdminHealthStatus.css";
 import { useEffect, useState, useRef } from "react";
 
 export default function AdminHealthStatus() {
+  const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [patients, setPatients] = useState([]);
@@ -225,6 +228,12 @@ useEffect(() => {
 
     {/* CREATE FORM */}
     <div className="create-health-card" ref={formRef}>
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
       <h2>Create Health Status</h2>
 
       <form onSubmit={handleSubmit}>

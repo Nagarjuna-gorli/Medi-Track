@@ -1,144 +1,211 @@
-/* DoctorDietPlans.css */
+/* =========================
+   CONTAINER
+========================= */
 
-.diet-container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
+.do-diet-container {
+  max-width: 1600px;
+  width: 95%;
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 119, 255, 0.08);
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Title */
-.diet-container h2 {
+.do-diet-container h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #2e7d32;
-  font-size: 26px;
+  color: #1e40af;
+  margin-bottom: 25px;
+  font-size: 28px;
   font-weight: 700;
 }
 
-/* FORM SECTION */
-.diet-container select,
-.diet-container input,
-.diet-container textarea {
+/* =========================
+   FORM INPUTS
+========================= */
+
+.do-diet-container input,
+.do-diet-container textarea {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #cfcfcf;
-  border-radius: 6px;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #cfe2ff;
+  border-radius: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.do-diet-container input:focus,
+.do-diet-container textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.2);
+}
+
+.do-diet-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================
+   CREATE / UPDATE BUTTON
+========================= */
+
+.do-diet-container > button {
+  margin-top: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.do-diet-container > button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.do-search-box {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 15px auto 25px;
+  padding: 12px 16px;
+  border: 2px solid #d6e4ff;
+  border-radius: 10px;
   font-size: 15px;
   outline: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
   background: #fff;
 }
 
-.diet-container select:focus,
-.diet-container input:focus,
-.diet-container textarea:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
+.do-search-box:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.2);
 }
 
-/* BUTTONS */
-.diet-container button {
-  padding: 10px 14px;
+/* =========================
+   CARD
+========================= */
+
+.do-diet-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.do-diet-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.12);
+}
+
+.do-diet-card h3 {
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+.do-diet-card p {
+  margin: 8px 0;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.do-diet-card b {
+  color: #1e3a8a;
+}
+
+/* =========================
+   CARD BUTTONS
+========================= */
+
+.do-diet-card button {
   border: none;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  color: white;
+  font-size: 14px;
   font-weight: 600;
   margin-right: 10px;
-  transition: 0.3s;
+  margin-top: 12px;
+  transition: all 0.3s ease;
 }
 
-/* Create / Update Button */
-.diet-container button:first-of-type {
-  background: #28a745;
-  color: white;
+/* Update */
+
+.do-diet-card button:first-of-type {
+  background: #2563eb;
 }
 
-.diet-container button:first-of-type:hover {
-  background: #218838;
-}
-
-/* optional second button style if used */
-.diet-container button:nth-of-type(2) {
-  background: #007bff;
-  color: white;
-}
-
-.diet-container button:nth-of-type(2):hover {
-  background: #0056b3;
-}
-
-/* CARDS */
-.diet-card {
-  background: white;
-  margin-top: 15px;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid #28a745;
-}
-
-/* CARD TEXT */
-.diet-card h3 {
-  margin-bottom: 8px;
-  color: #1b5e20;
-}
-
-.diet-card p {
-  margin: 6px 0;
-  color: #444;
-}
-
-.diet-card strong,
-.diet-card b {
-  color: #2e7d32;
-}
-
-/* ACTION BUTTONS INSIDE CARD */
-.diet-card button {
-  padding: 8px 12px;
-  margin-right: 8px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* Edit */
-.diet-card button:first-of-type {
-  background: #28a745;
-  color: white;
-}
-
-.diet-card button:first-of-type:hover {
-  background: #1e7e34;
+.do-diet-card button:first-of-type:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
 }
 
 /* Delete */
-.diet-card button:last-of-type {
-  background: #dc3545;
-  color: white;
+
+.do-diet-card button:last-of-type {
+  background: #ef4444;
 }
 
-.diet-card button:last-of-type:hover {
-  background: #c82333;
+.do-diet-card button:last-of-type:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
 }
 
-/* DIVIDER */
-.diet-container hr {
-  margin: 25px 0;
+/* Divider */
+
+.do-diet-container hr {
+  margin: 30px 0;
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 2px solid #e3f2fd;
 }
 
-/* MOBILE */
+/* =========================
+   REACT SELECT
+========================= */
+
+.css-13cymwt-control,
+.css-t3ipsp-control {
+  min-height: 48px !important;
+  border-radius: 10px !important;
+}
+
+.css-13cymwt-control {
+  border: 1px solid #cfe2ff !important;
+}
+
+.css-t3ipsp-control {
+  border: 1px solid #2563eb !important;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
-  .diet-container {
-    padding: 10px;
+  .do-diet-container {
+    padding: 20px;
   }
 
-  .diet-card {
-    padding: 14px;
+  .do-diet-card button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import "../../css/DoctorNotifications.css";
+import "../../css/Notifications.css";
 
 export default function PatientNotifications() {
+   const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -81,6 +84,14 @@ return () => ws.close();
 
   return (
     <div className="notifications-container">
+
+      <div className="back-container">
+      <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+      />
+     </div>
+
       <h2>My Notifications</h2>
 
       {notifications.length > 0 ? (

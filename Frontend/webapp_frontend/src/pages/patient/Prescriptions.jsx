@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/Prescriptions.css";
 
 export default function Prescriptions() {
+  const navigate = useNavigate();
   const [prescriptions, setPrescriptions] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,6 +28,14 @@ export default function Prescriptions() {
 
   return (
     <div className="prescription-container">
+
+      <div className="back-container">
+      <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+      />
+     </div>
+
       <h2>My Prescriptions</h2>
 
       {prescriptions.length === 0 ? (

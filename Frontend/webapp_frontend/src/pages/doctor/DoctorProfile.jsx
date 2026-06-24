@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/DoctorProfile.css"
 
 function DoctorProfile() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
     username: "",
     email: "",
     specialization: "",
+    experience: "",
     phone: "",
     hospital_name: "",
     hospital_address: "",
@@ -34,6 +38,7 @@ function DoctorProfile() {
         username: res.data.username || "",
         email: res.data.email || "",
         specialization: res.data.specialization || "",
+        experience: res.data.experience || "",
         phone: res.data.phone || "",
         hospital_name: res.data.hospital_name || "",
         hospital_address: res.data.hospital_address || "",
@@ -80,6 +85,13 @@ function DoctorProfile() {
 
   return (
     <div className="doctor-profile-container">
+      <div className="doctor-appointments">
+            <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/doctor")}
+          />
+        </div>
       <h2>Doctor Profile</h2>
 
       <label>Username:</label>
@@ -94,6 +106,16 @@ function DoctorProfile() {
         value={profile.specialization}
         onChange={handleChange}
         disabled={!editing}
+      />
+
+      <label>Experience (Years):</label>
+      <input
+        type="number"
+        name="experience"
+        value={profile.experience}
+        onChange={handleChange}
+        disabled={!editing}
+        min="0"
       />
 
       <label>Phone:</label>
@@ -163,7 +185,7 @@ function DoctorProfile() {
      {!editing ? (
   <button
     type="button"
-    className="edit-btn"
+    className="doctor-edit-btn"
     onClick={() => setEditing(true)}
   >
     Edit Profile
@@ -187,6 +209,7 @@ function DoctorProfile() {
     </button>
   </div>
 )}
+    </div>
     </div>
   );
 }

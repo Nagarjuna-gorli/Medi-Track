@@ -72,3 +72,52 @@ class PatientProfileView(APIView):
 
         except Patient.DoesNotExist:
             return Response({"error": "Patient not found"}, status=404)
+        
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
+from appointments.models import Appointment
+from prescriptions.models import Prescription
+from reports.models import Report
+
+
+class PatientDashboardStatsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+
+        if request.user.role != "patient":
+            return Response(
+                {"detail": "Only patients can access this endpoint"},
+                status=403
+            )
+
+        patient = request.user.patient
+
+        appointments = Appointment.objects.filter(
+            patient=patient
+        ).count()
+
+        upcoming = Appointment.objects.filter(
+            patient=patient,
+            status="pending"  
+        ).count()
+
+        prescriptions = Prescription.objects.filter(
+            patient=patient
+        ).count()
+
+        reports = Report.objects.filter(
+            patient=patient
+        ).count()
+
+
+        return Response({
+            "appointments": appointments,
+            "upcoming": upcoming,
+            "prescriptions": prescriptions,
+            "reports": reports,
+        
+        })

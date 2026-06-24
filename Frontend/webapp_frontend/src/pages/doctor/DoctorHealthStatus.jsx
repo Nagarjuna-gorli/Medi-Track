@@ -1,9 +1,12 @@
 import { useEffect, useState, useRef } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import Select from "react-select";
 import "../../css/DoctorHealthStatus.css";
 
 export default function DoctorHealthStatus() {
+  const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [patients, setPatients] = useState([]);
   const [editingId, setEditingId] = useState(null);
@@ -147,14 +150,21 @@ export default function DoctorHealthStatus() {
   );
 
   return (
- <div className="diet-container" ref={formRef}>
+ <div className="doctor-diet-container" ref={formRef}>
+  <div className="doctor-appointments">
+        <div className="back-container">
+      <FaArrowLeft
+        className="back-arrow"
+        onClick={() => navigate("/doctor")}
+      />
+    </div>
 
     <h2>Doctor Health Status Panel</h2>
 
     {/* =========================
         FORM
     ========================= */}
-    <form onSubmit={handleSubmit} className="health-form">
+    <form onSubmit={handleSubmit} className="doctor-health-form">
 
       <Select
         placeholder="Search Patient..."
@@ -251,13 +261,13 @@ export default function DoctorHealthStatus() {
     {/* =========================
         LIST
     ========================= */}
-    <div className="health-list">
+    <div className="doctor-health-list">
 
       {filteredRecords.length === 0 ? (
         <p>No records found</p>
       ) : (
         filteredRecords.map((item) => (
-          <div className="health-card" key={item.id}>
+          <div className="doctor-health-card" key={item.id}>
 
             <p><b>Patient:</b> {item.patient_name}</p>
             <p><b>Status:</b> {item.status}</p>
@@ -265,7 +275,7 @@ export default function DoctorHealthStatus() {
             <p><b>Sugar:</b> {item.sugar_level}</p>
             <p><b>Temp:</b> {item.temperature}</p>
 
-            <div className="btn-group">
+            <div className="doctor-btn-group">
               <button onClick={() => handleEdit(item)}>✏️ Update</button>
 
               <button
@@ -288,6 +298,7 @@ export default function DoctorHealthStatus() {
       )}
 
     </div>
+  </div>
   </div>
 );
 }

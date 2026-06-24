@@ -130,13 +130,13 @@ body {
     flex-direction: column;
   }
 
-   .edit-btn,
+   .doctor-edit-btn,
   .cancel-btn {
     width: 100%;
   }
 }
 
-.edit-btn {
+.doctor-edit-btn {
   background: #1976d2;
   color: white;
   border: none;
@@ -148,12 +148,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.edit-btn:hover {
+.doctor-edit-btn:hover {
   background: #1565c0;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
 }
 
-.edit-btn:active {
+.doctor-edit-btn:active {
   transform: scale(0.97);
 }

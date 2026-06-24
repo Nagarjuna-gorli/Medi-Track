@@ -12,6 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
+      const start = Date.now();
       const response = await fetch("http://127.0.0.1:8000/api/token/", {
         method: "POST",
         headers: {
@@ -22,7 +23,7 @@ function Login() {
           password,
         }),
       });
-
+      console.log("Login Time:", Date.now() - start, "ms");
       const data = await response.json();
       console.log("Login response:", data);
 
@@ -30,6 +31,10 @@ function Login() {
         localStorage.setItem("access", data.access);
         localStorage.setItem("refresh", data.refresh);
         localStorage.setItem("role", data.role);
+        localStorage.setItem("username", username);
+
+        console.log("Stored Access:", localStorage.getItem("access"));
+  console.log("Stored Role:", localStorage.getItem("role"));
 
         if (data.role === "admin") {
           navigate("/admin");
@@ -84,6 +89,11 @@ function Login() {
         Don't have an account?{" "}
         <Link to="/register">Register</Link>
       </p>
+      
+      <p>
+      <Link to="/">← Back to Home</Link>
+      </p>
+
     </div>
   </div>  
   );

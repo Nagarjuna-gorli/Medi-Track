@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminPrescriptions.css";
 
 export default function AdminPrescriptions() {
+  const navigate = useNavigate();
   const [prescriptions, setPrescriptions] = useState([]);
   const [filteredPrescriptions, setFilteredPrescriptions] = useState([]);
 
@@ -218,6 +221,12 @@ const saveUpdate = async () => {
 
   return (
     <div className="admin-prescriptions-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
   <div className="create-prescription-card">
   <h2>Create Prescription</h2>
 

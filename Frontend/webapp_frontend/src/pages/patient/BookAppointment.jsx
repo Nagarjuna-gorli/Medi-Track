@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import "../../css/BookAppointment.css";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function BookAppointment() {
+  const navigate = useNavigate();
+
   const [doctors, setDoctors] = useState([]);
 
   const [form, setForm] = useState({
@@ -59,9 +63,16 @@ export default function BookAppointment() {
   return (
     <div className="book-container">
 
-      <h2>Book Appointment</h2>
+     <div className="back-container">
+    <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/patient")}
+    />
+  </div>
+
 
       <form className="book-form" onSubmit={submit}>
+        <h2>Book Appointment</h2>
 
         <select
           value={form.doctor}

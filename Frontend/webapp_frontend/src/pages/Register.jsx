@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
-import "../css/Register.css"
+import "../css/Register.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Register() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Register() {
       await api.post("accounts/register/", form);
 
       alert("Account created successfully");
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       console.log(err);
       alert("Registration failed");
@@ -36,7 +37,7 @@ function Register() {
 
 return (
   <div className="register-page">
-
+    
     <h1 className="register-title">MediTrack</h1>
 
     <div className="register-container">
@@ -77,8 +78,11 @@ return (
       </form>
 
       <p>
-        Already have an account? <Link to="/">Login</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
+      <p className="home-link" onClick={() => navigate("/")}>
+  ← Back to Home
+</p>
     </div>
   </div>
 );

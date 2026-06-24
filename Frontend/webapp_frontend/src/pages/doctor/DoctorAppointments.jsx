@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/DoctorAppointments.css";
 
 const DoctorAppointments = () => {
+  const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [searchDate, setSearchDate] = useState("");
@@ -150,6 +153,12 @@ const DoctorAppointments = () => {
 
   return (
     <div className="doctor-appointments">
+      <div className="back-container">
+    <FaArrowLeft
+      className="back-arrow"
+      onClick={() => navigate("/doctor")}
+    />
+  </div>
       <h2>Doctor Appointments</h2>
 
       {/* SEARCH SECTION */}

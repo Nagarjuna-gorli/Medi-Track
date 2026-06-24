@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "../../css/AdminAppointments.css";
 
 export default function AdminAppointments() {
+  const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
   const [filteredAppointments, setFilteredAppointments] = useState([]);
 
@@ -193,6 +196,12 @@ export default function AdminAppointments() {
 
   return (
     <div className="admin-appointments-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
 
       {/* CREATE APPOINTMENT */}
 

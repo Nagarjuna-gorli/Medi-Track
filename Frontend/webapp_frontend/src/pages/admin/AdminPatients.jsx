@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import api from "../../services/api";
 import "../../css/AdminPatients.css";
 
@@ -56,6 +57,12 @@ export default function AdminPatients() {
 
   return (
     <div className="admin-patients-container">
+      <div className="back-container">
+          <FaArrowLeft
+            className="back-arrow"
+            onClick={() => navigate("/admin")}
+          />
+        </div>
       <h2>Manage Patients</h2>
 
       <div className="search-section">

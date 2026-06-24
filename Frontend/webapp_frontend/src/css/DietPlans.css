@@ -1,86 +1,89 @@
-/* Main container */
-.diet-container {
-  padding: 30px;
-  background: #f6f8fb;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-/* Page title */
-.diet-container h2 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #2c3e50;
-}
-
-/* Grid layout */
-.diet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  padding: 10px;
-}
-
-/* Card design */
-.diet-card {
-  background: #ffffff;
-  border-radius: 14px;
+/* Page */
+.patient-diet-container {
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-left: 6px solid #4CAF50;
-}
-
-/* Hover effect */
-.diet-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  background: #f4f8ff;
+  min-height: 100vh;
 }
 
 /* Title */
-.diet-card h3 {
+.patient-diet-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* List Layout */
+.patient-diet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Card */
+.patient-diet-card {
+  background: white;
+  border-left: 5px solid #2563eb;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Title */
+.patient-diet-card h3 {
+  color: #1e3a8a;
   margin-bottom: 10px;
-  color: #1f3b57;
-  font-size: 20px;
 }
 
 /* Text */
-.diet-card p {
-  margin: 6px 0;
-  color: #444;
-  font-size: 14px;
-  line-height: 1.5;
+.patient-diet-card p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 15px;
 }
 
-/* Labels */
-.diet-card b {
-  color: #2c3e50;
+.patient-diet-card b {
+  color: #1e3a8a;
 }
 
-/* Meal section */
-.meals {
+/* Meals */
+.patient-meals {
   margin-top: 10px;
-  padding: 10px;
-  background: #f0f7f1;
-  border-radius: 10px;
 }
 
-.meals p {
-  margin: 4px 0;
+.patient-meals p {
+  margin: 6px 0;
 }
 
-/* Footer date */
-.diet-card small {
+/* Date */
+.patient-diet-card small {
   display: block;
-  margin-top: 12px;
-  color: #888;
-  font-size: 12px;
+  margin-top: 10px;
+  color: #666;
 }
 
-/* Empty state */
-.diet-container p {
+/* Empty Message */
+.patient-diet-container > p {
   text-align: center;
   color: #777;
   font-size: 16px;
+}
+
+/* Back Arrow */
+.back-container {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 1000;
+}
+
+.back-arrow {
+  font-size: 28px;
+  color: #2563eb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-arrow:hover {
+  color: #1d4ed8;
+  transform: translateX(-4px);
 }
